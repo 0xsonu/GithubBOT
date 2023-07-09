@@ -1,0 +1,10 @@
+{
+  "cpuTime": "0.01",
+  "memory": "7840",
+  "output": "Hello, World!\n",
+  "language": {
+    "id": "python3",
+    "version": 4,
+    "version_name": "3.9.9"
+  }
+}
