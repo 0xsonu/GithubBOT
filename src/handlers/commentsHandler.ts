@@ -9,14 +9,16 @@ export default async function handleComments(context: any) {
 
   // console.log("name and pr : %j", context);
   // Fetch and process comments
-  const comments = await context.octokit.issues.listComments({
-    owner: payload.sender.login,
-    repo: payload.repository.name,
-    issue_number: payload.issue.number,
-  });
+  // const comments = await context.octokit.issues.listComments({
+  //   owner: payload.sender.login,
+  //   repo: payload.repository.name,
+  //   issue_number: payload.issue.number,
+  // });
+
+  const comment = payload.comment;
 
   console.log("Reading comments...");
-  for (const comment of comments.data) {
+  //for (const comment of comments.data) {
     if (comment.body && commandRegex.test(comment.body)) {
       // Extract the code snippet from the comment
       const codeRegex = /```[\s\S]*?```/g;
@@ -47,7 +49,7 @@ export default async function handleComments(context: any) {
           repo: payload.repository.name,
           pull_number: payload.issue.number,
         });
-        debug({ pr: pr.body && codeRegex.test(pr.body), body: pr.body });
+        // debug({ pr: pr.body && codeRegex.test(pr.body), body: pr.body });
         // console.log("PR Details : %j", pr);
         debug({ match: pr.body.match(codeRegex) });
         if (pr.body && codeRegex.test(pr.body)) {
@@ -77,5 +79,5 @@ export default async function handleComments(context: any) {
     } else {
       console.log("No Command Found in commnet");
     }
-  }
+  //}
 }

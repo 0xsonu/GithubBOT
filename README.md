@@ -23,6 +23,13 @@ docker run -e APP_ID=<app-id> -e PRIVATE_KEY=<pem-value> gitbot
 ```
 
 ## Preview
+
+#### Short Preview
+
+https://github.com/SonuKumar81800/GithubBOT/assets/45717030/e4f1cce5-f81c-4059-9691-7d8ea604f4c2
+
+
+#### Detail Preview
 https://www.veed.io/embed/20e5ef86-fcbb-4f84-a6fd-5a8af5155fec
 
 
